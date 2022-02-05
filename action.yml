@@ -1,0 +1,12 @@
+name: 'Render Webhook'
+description: 'Trigger a Render service webhook'
+inputs:
+  service-id:
+    description: 'ID of the service to deploy'
+    required: true
+  key:
+    description: 'Key of the webhook URL'
+    required: true
+runs:
+  using: 'node16'
+  main: 'index.js'
