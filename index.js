@@ -1,4 +1,5 @@
 const core = require('@actions/core');
+const fetch = require('node-fetch');
 
 try {
 	const serviceID = core.getInput('service-id');
@@ -9,9 +10,9 @@ try {
 	};
 
 	fetch('https://api.render.com/deploy/' + serviceID + '?key=' + key, options)
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(err => console.error(err));
+		.then(response => response.json())
+		.then(response => console.log(response))
+		.catch(err => console.error(err));
 
 } catch (error) {
   core.setFailed(error.message);
