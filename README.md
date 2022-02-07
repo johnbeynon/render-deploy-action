@@ -14,7 +14,9 @@ This action triggers a Render webhook. It needs the serviceID of the Render serv
 
 ## Example usage
 
+```
 uses: johnbeynon/render-webhook-action
 with:
 	service-id: <SOMESERVICE>
 	key: <SOMEKEY>
+```
