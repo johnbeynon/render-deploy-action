@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
 try {
 	const serviceID = core.getInput('service-id');
