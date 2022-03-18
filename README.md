@@ -1,22 +1,19 @@
-# Render Webhook action
+# Render Deploy action
 
-This action triggers a Render webhook. It needs the serviceID of the Render service to trigger the deploy on as well as the key (Get this from the webhook in the Render dashboard)
+This action triggers a Render deploy. It needs the serviceID of the Render service to trigger the deploy.
 
 ## Inputs
 
 ## `service-id`
 
-**Required** The serviceID of the Render service to trigger the webhook on
-
-## `key`
-
-**Required** The key defined on the Render webhook service URL
+**Required** The serviceID of the Render service to trigger the deploy on
 
 ## Example usage
 
+Use GitHub Action secrets to set the values of `service-id` and then add to your workflow with:
+
 ```
-uses: johnbeynon/render-webhook-action
+uses: johnbeynon/render-deploy-action
 with:
-	service-id: <SOMESERVICE>
-	key: <SOMEKEY>
+	service-id: ${{ secrets.some-render-service-id }}
 ```

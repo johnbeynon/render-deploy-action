@@ -3,13 +3,12 @@ const fetch = require('node-fetch');
 
 try {
 	const serviceID = core.getInput('service-id');
-	const key = core.getInput('key')
 
 	const options = {
 		method: 'POST',
 	};
 
-	fetch('https://api.render.com/deploy/' + serviceID + '?key=' + key, options)
+	fetch('https://api.render.com/v1/services/' + serviceID + '/deploys', options)
 		.then(response => response.json())
 		.then(response => console.log(response))
 		.catch(err => console.error(err));

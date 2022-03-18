@@ -1,5 +1,5 @@
 {
-  "name": "render-webhook-action",
+  "name": "render-deploy-action",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
