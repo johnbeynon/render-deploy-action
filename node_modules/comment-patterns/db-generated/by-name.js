@@ -1,0 +1,1 @@
+module.exports = {C:0,Clojure:1,CoffeeScript:2,"C++":3,CSharp:4,CSS:5,Go:6,Handlebars:7,Haskell:8,HTML:9,Jade:10,Jake:11,Java:12,JavaScript:13,JSON:14,JSP:15,Kotlin:16,LaTeX:17,LESS:18,LiveScript:19,Lua:20,Make:21,Markdown:22,Mustache:23,"Objective-C":24,Perl:25,PHP:26,Puppet:27,Python:28,Ruby:29,Sass:30,Scala:31,SCSS:32,Shell:33,SQL:34,Swift:35,TypeScript:36,YAML:37};

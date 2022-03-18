@@ -1,0 +1,17 @@
+{{!
+A comment without indent.
+}}
+{{>some-partial}}
+
+{{!
+  A comment with indent ...
+
+      ... and an other larger indent
+}}
+{{#if definitions}}
+    <h2>Definitions</h2>
+    {{!
+       Wholly indented comment
+    }}
+    {{>json-schema/definitions}}
+{{/if}}

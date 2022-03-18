@@ -1,0 +1,45 @@
+{
+    "name" : "quotemeta",
+    "version" : "0.0.0",
+    "description" : "escape regular expression characters",
+    "main" : "index.js",
+    "bin" : {},
+    "directories" : {
+        "example" : "example",
+        "test" : "test"
+    },
+    "devDependencies" : {
+        "tap" : "~0.3.0",
+        "tape" : "~0.1.5"
+    },
+    "scripts" : {
+        "test" : "tap test/*.js"
+    },
+    "testling" : {
+        "files" : "test/*.js",
+        "browsers" : [
+            "ie6", "ie7", "ie8", "ie9",
+            "chrome/20", "firefox/17", "firefox/5",
+            "safari/5.1", "opera/12"
+        ]
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/substack/quotemeta.git"
+    },
+    "homepage" : "https://github.com/substack/quotemeta",
+    "keywords" : [
+        "regex",
+        "RegExp",
+        "escape",
+        "backslash",
+        "\\",
+        "quote"
+    ],
+    "author" : {
+        "name" : "James Halliday",
+        "email" : "mail@substack.net",
+        "url" : "http://substack.net"
+    },
+    "license" : "MIT"
+}
