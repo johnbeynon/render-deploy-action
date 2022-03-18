@@ -1,4 +1,4 @@
-name: 'Render Deploy'
+name: 'Render Deploy Action'
 description: 'Trigger a Render service deploy'
 inputs:
   service-id:
