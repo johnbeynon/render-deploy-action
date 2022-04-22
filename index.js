@@ -1,17 +1,18 @@
 const core = require('@actions/core');
+const fetch = require('node-fetch');
 
 try {
 	const serviceID = core.getInput('service-id');
-	const apiKey =  core.getInput('api-key');
+	const key = core.getInput('api-key')
 
-	const sdk = require('api')('@render-api/v1.0#t0hgnkl09w8siw');
-
-	sdk.auth(apiKey);
-	sdk['create-deploy']({clearCache: 'do_not_clear'}, {serviceId: serviceID })
-  	.then(res => core.info(res))
-  	.catch(err => core.setFailed(err));
+	fetch('https://api.render.com/v1/services/' + serviceID + '/deploys', {
+		method: 'POST',
+		headers: { 'Authorization': `Bearer ${key}`}
+		}).then(response => {
+			core.info(`Received response: ${response.status}`)
+		})
+		.catch(error => core.setFailed(error.message));
 
 } catch (error) {
   core.setFailed(error.message);
 }
-
