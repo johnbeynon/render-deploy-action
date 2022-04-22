@@ -8,8 +8,8 @@ try {
 
 	sdk.auth(apiKey);
 	sdk['create-deploy']({clearCache: 'do_not_clear'}, {serviceId: serviceID })
-  	.then(res => console.log(res))
-  	.catch(err => console.error(err));
+  	.then(res => core.info(res))
+  	.catch(err => core.setFailed(err));
 
 } catch (error) {
   core.setFailed(error.message);
