@@ -10,12 +10,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@actions/core": "^1.6.0",
-    "@actions/github": "^5.0.0",
-    "node-fetch": "^3.2.3"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@vercel/ncc": "^0.33.4"
+    "@vercel/ncc": "^0.33.4",
+    "node-fetch": "^3.2.3",
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0"
   }
 }

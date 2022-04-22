@@ -1,18 +1,16 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 const core = require('@actions/core');
 
 async function run() {
-	const SERVICEID = core.getInput('service-id');
-  const APIKEY = core.getInput('api-key') 
+	const SERVICEID = core.getInput('service-id') || process.env.SERVICEID;
+  const APIKEY = core.getInput('api-key') || process.env.APIKEY;
   
-	fetch('https://api.render.com/v1/services/' + SERVICEID + '/deploys', {
+	const response = await fetch('https://api.render.com/v1/services/' + SERVICEID + '/deploys', {
 		method: 'POST',
 		headers: { 'Authorization': `Bearer ${APIKEY}`}
-		}).then(response => {
-			core.info(`Received response: ${response.status}`)
 		})
-		.catch(error => core.setFailed(error.message));
 
+	core.info(`Response received: ${response.status}`)
 }
 
 run().catch(e => core.setFailed(e.message));
