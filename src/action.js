@@ -3,14 +3,20 @@ const core = require('@actions/core');
 
 async function run() {
 	const SERVICEID = core.getInput('service-id') || process.env.SERVICEID;
-  const APIKEY = core.getInput('api-key') || process.env.APIKEY;
-  
+	const APIKEY = core.getInput('api-key') || process.env.APIKEY;
+
 	const response = await fetch('https://api.render.com/v1/services/' + SERVICEID + '/deploys', {
 		method: 'POST',
 		headers: { 'Authorization': `Bearer ${APIKEY}`}
-		})
+	})
 
-	core.info(`Response received: ${response.status}`)
+	response.json().then(data => {
+		if (response.ok) {
+			core.info(`Deploy ${data.status} - Commit: ${data.commit.message}`)
+		} else {
+			core.setFailed(`Deploy error: ${data.message} (status code ${response.status})`)
+		}
+	});
 }
 
 run().catch(e => core.setFailed(e.message));
