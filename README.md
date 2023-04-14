@@ -6,7 +6,7 @@ This action triggers a Render deploy.
 
 ## `service-id`
 
-**Required** The serviceID of the Render service to trigger the deploy on
+**Required** The serviceID of the Render service to trigger the deploy on. When viewing a service in the Render dashboard grab this value from the URL - it will start with `srv-`
 
 ## `api-key`
 
@@ -17,8 +17,21 @@ This action triggers a Render deploy.
 Use GitHub Action secrets to set the values of `service-id` and `api-key` and then add to your workflow with:
 
 ```
-uses: johnbeynon/render-deploy-action
-with:
-	service-id: ${{ secrets.some-render-service-id }}
-	api-key: ${{ secrets.render-api-key }}
+name: My Deploy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to production
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
+          api-key: ${{ secrets.MY_RENDER_API_KEY }}
 ```
