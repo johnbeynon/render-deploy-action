@@ -8744,7 +8744,15 @@ async function run() {
 		headers: { 'Authorization': `Bearer ${APIKEY}`}
 		})
 
-	core.info(`Response received: ${response.status}`)
+	response.json().then(data => {
+		if (response.ok) {
+			core.info(`Deploy ${data.status} - Commit: ${data.commit.message}`)
+		} else if (response.status === 401) {
+			core.setFailed('Render Deploy Action: Unauthorized. Please check your API key.')
+		} else {
+			core.setFailed(`Deploy error: ${data.message} (status code ${response.status})`)
+		}
+	});
 }
 
 run().catch(e => core.setFailed(e.message));
