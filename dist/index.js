@@ -8746,7 +8746,7 @@ async function run() {
 
 	response.json().then(data => {
 		if (response.ok) {
-			core.info(`Deploy ${data.id}`)
+			core.info(`Deploy: https://dashboard.render.com/web/${data.id}`)
 		} else if (response.status === 401) {
 			core.setFailed('Render Deploy Action: Unauthorized. Please check your API key.')
 		} else {
