@@ -12,7 +12,8 @@ async function run() {
 
 	response.json().then(data => {
 		if (response.ok) {
-			core.info(`Deploy: https://dashboard.render.com/web/${data.id}`)
+			// TODO: This should check the service type as it might not always be WEB
+			core.info(`Deploy: https://dashboard.render.com/web/${SERVICEID}/deploys/${data.id}`)
 		} else if (response.status === 401) {
 			core.setFailed('Render Deploy Action: Unauthorized. Please check your API key.')
 		} else {
