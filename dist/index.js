@@ -8746,7 +8746,7 @@ async function run() {
 
 	response.json().then(data => {
 		if (response.ok) {
-			core.info(`Deploy ${data.status} - Commit: ${data.commit.message}`)
+			core.info(`Deploy ${data.id}`)
 		} else if (response.status === 401) {
 			core.setFailed('Render Deploy Action: Unauthorized. Please check your API key.')
 		} else {
