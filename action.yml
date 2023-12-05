@@ -1,4 +1,4 @@
-name: "Render Deploy Action"
+name: "Render Deploy Action - fork"
 description: "Trigger a Render service deploy"
 inputs:
   service-id:
@@ -7,6 +7,9 @@ inputs:
   api-key:
     description: "A Render API key"
     required: true
+  wait-for-success:
+    description: "Should job wait for deployment to succeed"
+    required: false 
 runs:
   using: "node16"
   main: "dist/index.js"

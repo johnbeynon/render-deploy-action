@@ -12,6 +12,11 @@ This action triggers a Render deploy.
 
 **Required** Render API key
 
+## `wait-for-success`
+
+**Optional** When true job will pend untill the deployment get to the status `live`
+
+
 ## Example usage
 
 Use GitHub Action secrets to set the values of `service-id` and `api-key` and then add to your workflow with:
@@ -34,4 +39,5 @@ jobs:
         with:
           service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
           api-key: ${{ secrets.MY_RENDER_API_KEY }}
+          wait-for-success: true
 ```
