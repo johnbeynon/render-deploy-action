@@ -1,5 +1,8 @@
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,node
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,macos,node
+# Created by https://www.toptal.com/developers/gitignore/api/node,macos,visualstudiocode,asdf
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,macos,visualstudiocode,asdf
+
+### asdf ###
+/.tool-versions
 
 ### macOS ###
 # General
@@ -76,7 +79,7 @@ bower_components
 build/Release
 
 # Dependency directories
-/node_modules
+node_modules/
 jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
@@ -126,6 +129,7 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
+dist
 
 # Gatsby files
 .cache/
@@ -192,4 +196,4 @@ out
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,node
+# End of https://www.toptal.com/developers/gitignore/api/node,macos,visualstudiocode,asdf

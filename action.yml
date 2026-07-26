@@ -1,4 +1,4 @@
-name: "Render Deploy Action - fork"
+name: "Render Deploy Action"
 description: "Trigger a Render service deploy"
 inputs:
   service-id:
@@ -11,5 +11,5 @@ inputs:
     description: "Should job wait for deployment to succeed"
     required: false 
 runs:
-  using: "node16"
+  using: "node24"
   main: "dist/index.js"
