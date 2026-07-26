@@ -39,7 +39,9 @@ async function fetchLatestDeploy() {
   if (!deploys || deploys.length === 0) {
     throw new Error("No deploys found after triggering deploy");
   }
-  return deploys[0];
+  // Render's list-deploys endpoint wraps each entry as {deploy, cursor};
+  // the single-deploy endpoint returns the deploy object directly.
+  return deploys[0].deploy || deploys[0];
 }
 
 async function retrieveStatus(deployId) {
