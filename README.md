@@ -16,6 +16,12 @@ This action triggers a Render deploy.
 
 **Optional** When true job will pend untill the deployment get to the status `live`
 
+## Outputs
+
+## `deploy-id`
+
+The ID of the triggered Render deploy (starts with `dep-`). Set as soon as the deploy is created, before waiting for success, so it is available even if the deploy fails.
+
 
 ## Example usage
 

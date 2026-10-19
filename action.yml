@@ -10,6 +10,9 @@ inputs:
   wait-for-success:
     description: "Should job wait for deployment to succeed"
     required: false 
+outputs:
+  deploy-id:
+    description: "ID of the triggered Render deploy"
 runs:
   using: "node24"
   main: "dist/index.js"

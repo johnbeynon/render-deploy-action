@@ -122,6 +122,8 @@ async function run() {
     data = await fetchLatestDeploy();
   }
 
+  core.setOutput("deploy-id", data.id);
+
   let ref = "unknown";
   if (data.commit) {
     ref = `git commit: ${data.commit.message}`;
